@@ -51,7 +51,7 @@ body {
 
 .header-container,
 .blue-section-container {
-    background-color: rgb(49 97 224);
+    background-color: var(--background-color-header);
 }
 
 .header-sub-container {
