@@ -8,7 +8,7 @@
 
     --square-left-main-section: rgba(30, 144, 255, 1);
     --square-right-main-section: rgba(255, 192, 203, 1);
-    --background-main-even-section: rgba(211, 211, 211, 1);
+    --background-main-even-section: rgba(246 246 246);
 
     --square-color-final-section: rgba(34, 139, 34, 1);
 
@@ -20,21 +20,39 @@
 
     --light-color: rgb(255, 255, 255, 1);
     --dark-color: rgb(0, 0, 0, 1);
+    --download-button-end-page: rgb(142 161 225);
 }
 
 /*UNIVERSAL RULES*/
 .container {
-
     max-width: 1000px;
     margin: auto;
-    padding: 10px
 }
 
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: var(--background-main-even-section);
 }
+
+/*#region wave*/
+.wave-container {
+    margin: 0px
+}
+
+.wave-img,
+.wave-bottom-img {
+    display: block;
+    width: 100%;
+    filter: invert(99%) sepia(1%) saturate(751%) hue-rotate(231deg) brightness(120%) contrast(100%);
+}
+
+.wave-img {
+    transform: rotate(180deg);
+}
+
+/*#endregion wave*/
 
 /*#region header*/
 
@@ -51,9 +69,9 @@ body {
 
 .header-container,
 .blue-section-container {
-    background-color: var(--background-color-header);
     padding-right: 50px;
     padding-left: 50px;
+    background-image: url(../discord-assets/img/jumbo.png);
 }
 
 .header-sub-container {
@@ -105,7 +123,16 @@ body {
 
 }
 
+
 /*#endregion header*/
+
+#site-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
 
 /*#region first-section*/
 .site-section-blue {
@@ -128,16 +155,15 @@ body {
 
 .blue-section-container {
     display: flex;
-    justify-content: space-between;
-}
-
-.blue-section-container>img {
-    width: 25%;
+    justify-content: center;
+    background-size: cover;
 }
 
 .site-section-main {
     max-width: 50%;
+
 }
+
 
 .site-section-main>h2,
 .site-section-main>p {
@@ -149,7 +175,9 @@ body {
 }
 
 .site-section-main>h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-shadow: 1px 1px white;
 }
 
 .site-section-main-buttons {
@@ -183,19 +211,11 @@ body {
 /*#endregion first-section*/
 
 /*#region light-section*/
-.site-section-light {
-    display: flex;
-    justify-content: center;
-}
+
 
 .debug .light-section-container-left {
     background-color: var(--square-left-main-section);
 
-}
-
-.light-section-container-left {
-    width: 60%;
-    border: 1px solid black;
 }
 
 .debug .light-section-container-right {
@@ -204,16 +224,36 @@ body {
 
 }
 
+.site-section-light {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-color: var(--light-color);
+}
+
+.light-section-container-left {
+    width: 60%;
+    justify-self: center;
+}
+
+.light-section-container-left>img {
+    width: 100%;
+}
+
+
+
+
 .light-section-container-right {
-    width: 40%;
-    border: 1px solid black;
+
+    display: flex;
+    flex-direction: column;
+    width: 30%;
 
 }
 
-.light-section-container-left,
-.light-section-container-right {
-    height: 300px;
-    margin: 1rem 0;
+.light-section-container-right>h2 {
+    font-size: 2.5rem;
 }
 
 /*#endregion light-section*/
@@ -224,24 +264,12 @@ body {
 del codice più pulita*/
 
 .site-section-dark {
-    background-color: var(--background-main-even-section);
-}
-
-.background-container {
-    width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: row-reverse;
-}
-
-.debug .dark-section-container-left {
-    background-color: var(--square-left-main-section);
-
-}
-
-.dark-section-container-left {
-    width: 60%;
-    border: 1px solid black;
+    margin: 0;
+    background-color: var(--background-main-even-section);
 }
 
 .debug .dark-section-container-right {
@@ -250,17 +278,35 @@ del codice più pulita*/
 
 }
 
-.dark-section-container-right {
-    width: 40%;
+.debug .dark-section-container-right {
+    background-color: var(--square-right-main-section);
     border: 1px solid black;
 
 }
 
-.dark-section-container-left,
-.dark-section-container-right {
-    height: 300px;
-    margin: 1rem 0;
+.dark-section-container-left {
+    width: 60%;
+    justify-self: center;
 }
+
+.dark-section-container-left>img {
+    width: 100%;
+}
+
+
+.dark-section-container-right {
+
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+
+}
+
+.dark-section-container-right>h2 {
+    font-size: 2.5rem;
+}
+
+
 
 /*#endregion dark-section*/
 
@@ -268,19 +314,51 @@ del codice più pulita*/
 
 .debug .green-square-dark-section-container {
     background-color: var(--square-color-final-section);
+    height: 500px;
 }
 
 .green-square-dark-section-container {
-    width: 100%;
+    width: 80%;
+    flex-direction: column;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 500px;
-    margin: 1rem 0;
-    border: 1px solid black;
+}
+
+.green-square-dark-section-container>h2 {
+    font-size: 2.5rem;
+}
+
+.green-square-dark-section-container>p {
+    font-size: 1rem;
+    text-align: center;
 }
 
 /*#endregion final-section*/
+.download-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.download-container {
+    background-image: url(../discord-assets/img/stars.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    padding: 0px 20px;
+}
+
+
+.download-container .blue-button {
+    background-color: var(--download-button-end-page);
+    width: 60%;
+    color: var(--light-color);
+    border-radius: 30%;
+    margin-bottom: 30%;
+    font-weight: bold;
+
+}
 
 /*#region footer*/
 #site-footer {
