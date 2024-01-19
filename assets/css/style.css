@@ -1,0 +1,292 @@
+:root {
+    /*COLORS*/
+    --background-color-header: rgb(49 97 224);
+    --background-color-sub-container-header: rgba(218, 165, 32, 1);
+
+    --background-first-section: rgba(0, 0, 139, 1);
+    --square-color-first-section: rgba(238, 130, 238, 1);
+
+    --square-left-main-section: rgba(30, 144, 255, 1);
+    --square-right-main-section: rgba(255, 192, 203, 1);
+    --background-main-even-section: rgba(211, 211, 211, 1);
+
+    --square-color-final-section: rgba(34, 139, 34, 1);
+
+    --background-color-footer: rgba(35, 39, 42, 1);
+    --left-column-footer: rgba(240, 128, 128, 1);
+    --right-column-footer: rgba(32, 178, 170, 1);
+    --background-color-container-footer: rgba(127, 255, 212, 1);
+    --logo-button-color-footer: rgba(250, 178, 189, 1);
+
+    --light-color: rgb(255, 255, 255, 1);
+    --dark-color: rgb(0, 0, 0, 1);
+}
+
+/*UNIVERSAL RULES*/
+.container {
+
+    max-width: 1000px;
+    margin: auto;
+    padding: 10px
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*#region header*/
+
+.debug header {
+    background-color: var(--background-color-header);
+
+}
+
+
+.debug .header-sub-container {
+    background-color: var(--background-color-sub-container-header);
+
+}
+
+.header-container,
+.blue-section-container {
+    background-color: rgb(49 97 224);
+}
+
+.header-sub-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.logo {
+    flex-grow: 1;
+}
+
+.logo-discord>img {
+    width: auto;
+}
+
+.links-container {
+    justify-content: space-around;
+    flex-grow: 3;
+    text-align: center;
+}
+
+.links>a {
+    color: white;
+    text-decoration: none;
+    margin: 5px;
+}
+
+.links>a:hover {
+    font-size: 20px;
+}
+
+.login {
+    flex-grow: 1;
+    text-align: right;
+}
+
+.login>button {
+    border: 5px solid var(--light-color);
+    border-radius: 30%;
+    background-color: var(--light-color);
+}
+
+.logo,
+.links,
+.login {
+    padding: 5px;
+
+}
+
+/*#endregion header*/
+
+/*#region first-section*/
+.site-section-blue {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.debug .site-section-blue {
+    background-color: var(--background-first-section);
+    height: 300px;
+}
+
+.debug .site-section-blue .blue-section-container {
+    width: 700px;
+    height: 250px;
+    border: 1px dashed black;
+    background-color: var(--square-color-first-section);
+}
+
+/*#endregion first-section*/
+
+/*#region light-section*/
+.site-section-light {
+    display: flex;
+    justify-content: center;
+}
+
+.debug .light-section-container-left {
+    background-color: var(--square-left-main-section);
+
+}
+
+.light-section-container-left {
+    width: 60%;
+    border: 1px solid black;
+}
+
+.debug .light-section-container-right {
+    background-color: var(--square-right-main-section);
+    border: 1px solid black;
+
+}
+
+.light-section-container-right {
+    width: 40%;
+    border: 1px solid black;
+
+}
+
+.light-section-container-left,
+.light-section-container-right {
+    height: 300px;
+    margin: 1rem 0;
+}
+
+/*#endregion light-section*/
+
+/*#region dark-section*/
+
+/*Ho preferito ripetere le regole per una comprensione 
+del codice più pulita*/
+
+.site-section-dark {
+    background-color: var(--background-main-even-section);
+}
+
+.background-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+}
+
+.debug .dark-section-container-left {
+    background-color: var(--square-left-main-section);
+
+}
+
+.dark-section-container-left {
+    width: 60%;
+    border: 1px solid black;
+}
+
+.debug .dark-section-container-right {
+    background-color: var(--square-right-main-section);
+    border: 1px solid black;
+
+}
+
+.dark-section-container-right {
+    width: 40%;
+    border: 1px solid black;
+
+}
+
+.dark-section-container-left,
+.dark-section-container-right {
+    height: 300px;
+    margin: 1rem 0;
+}
+
+/*#endregion dark-section*/
+
+/*#region final-section*/
+
+.debug .green-square-dark-section-container {
+    background-color: var(--square-color-final-section);
+}
+
+.green-square-dark-section-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    margin: 1rem 0;
+    border: 1px solid black;
+}
+
+/*#endregion final-section*/
+
+/*#region footer*/
+#site-footer {
+    background-color: var(--background-color-footer);
+
+}
+
+/*MAIN CONTAINER*/
+
+.debug .footer-container-main-column {
+    background-color: var(--left-column-footer);
+}
+
+.footer-main-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.footer-container-main-column {
+    flex-grow: 2;
+}
+
+.footer-container-main-column,
+.footer-container-side-column {
+    height: 400px;
+    border: 1px dashed white
+}
+
+.debug .footer-container-side-column {
+    background-color: var(--right-column-footer);
+}
+
+.footer-container-side-column {
+    flex-grow: 1;
+    border-left: 0px;
+}
+
+/*SIDE CONTAINER*/
+.footer-side-container {
+    border-top: 1px solid white;
+
+}
+
+.footer-info-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.debug .footer-info-container {
+    background-color: var(--background-color-container-footer);
+}
+
+.register {
+    border: 1px dashed black;
+}
+
+/*#endregion footer*/
